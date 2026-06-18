@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+  <display-name>Car Rental System</display-name>
+
+  <!-- ── Welcome file ─────────────────────────────────── -->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <!-- ── Servlet mappings ──────────────────────────────── -->
+
+  <!-- Auth -->
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.carrental.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.carrental.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.carrental.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+
+  <!-- Cars -->
+  <servlet>
+    <servlet-name>SearchCarServlet</servlet-name>
+    <servlet-class>com.carrental.servlet.SearchCarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchCarServlet</servlet-name>
+    <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>CarDetailServlet</servlet-name>
+    <servlet-class>com.carrental.servlet.CarDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CarDetailServlet</servlet-name>
+    <url-pattern>/car-detail</url-pattern>
+  </servlet-mapping>
+
+  <!-- Bookings -->
+  <servlet>
+    <servlet-name>BookingServlet</servlet-name>
+    <servlet-class>com.carrental.servlet.BookingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookingServlet</servlet-name>
+    <url-pattern>/booking</url-pattern>
+  </servlet-mapping>
+
+  <!-- Dashboard -->
+  <servlet>
+    <servlet-name>MyBookingsServlet</servlet-name>
+    <servlet-class>com.carrental.servlet.MyBookingsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyBookingsServlet</servlet-name>
+    <url-pattern>/my-bookings</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>MyAccountServlet</servlet-name>
+    <servlet-class>com.carrental.servlet.MyAccountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyAccountServlet</servlet-name>
+    <url-pattern>/my-account</url-pattern>
+  </servlet-mapping>
+
+  <!-- Session timeout: 30 minutes -->
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+
+</web-app>
